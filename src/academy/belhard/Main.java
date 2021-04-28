@@ -40,5 +40,6 @@ public class Main {
         } catch (IOException | EmptySourceFileException | TextException e) {
             e.printStackTrace();
         }
+
     }
 }

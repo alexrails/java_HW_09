@@ -24,7 +24,7 @@ public class PersonIOUtil {
 
         List<Person> persons = new ArrayList<>();
 
-        if (fileName.isEmpty()){
+        if (PersonIOUtil.isFileBlank(fileName)){
             throw new EmptySourceFileException("Empty file!");
         }
 
@@ -69,6 +69,11 @@ public class PersonIOUtil {
         int homeNumber = Integer.parseInt(dataArray[2].substring(dataArray[2].indexOf(":") + 2));
 
         return new Address(City, Street, homeNumber);
+    }
+
+    private static Boolean isFileBlank(String fileName) {
+        File file = new File(fileName);
+        return file.length() == 0;
     }
 
 }
